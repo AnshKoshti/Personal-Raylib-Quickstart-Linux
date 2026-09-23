@@ -42,8 +42,8 @@ endef
 
 ifeq ($(config),debug_x64)
 TARGETDIR = bin/Debug
-TARGET = $(TARGETDIR)/Personal-Raylib-Quickstart
-OBJDIR = obj/x64/Debug/Personal-Raylib-Quickstart
+TARGET = $(TARGETDIR)/Personal-Raylib-Quickstart-Linux
+OBJDIR = obj/x64/Debug/Personal-Raylib-Quickstart-Linux
 DEFINES += -DDEBUG -DPLATFORM_DESKTOP -DGRAPHICS_API_OPENGL_33 -D_GLFW_X11
 ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -Wshadow -g -std=c17
 ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -Wshadow -g -std=c++20
@@ -53,8 +53,8 @@ ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64
 
 else ifeq ($(config),debug_x86)
 TARGETDIR = bin/Debug
-TARGET = $(TARGETDIR)/Personal-Raylib-Quickstart
-OBJDIR = obj/x86/Debug/Personal-Raylib-Quickstart
+TARGET = $(TARGETDIR)/Personal-Raylib-Quickstart-Linux
+OBJDIR = obj/x86/Debug/Personal-Raylib-Quickstart-Linux
 DEFINES += -DDEBUG -DPLATFORM_DESKTOP -DGRAPHICS_API_OPENGL_33 -D_GLFW_X11
 ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m32 -Wshadow -g -std=c17
 ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m32 -Wshadow -g -std=c++20
@@ -64,8 +64,8 @@ ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib32 -m32
 
 else ifeq ($(config),debug_arm64)
 TARGETDIR = bin/Debug
-TARGET = $(TARGETDIR)/Personal-Raylib-Quickstart
-OBJDIR = obj/ARM64/Debug/Personal-Raylib-Quickstart
+TARGET = $(TARGETDIR)/Personal-Raylib-Quickstart-Linux
+OBJDIR = obj/ARM64/Debug/Personal-Raylib-Quickstart-Linux
 DEFINES += -DDEBUG -DPLATFORM_DESKTOP -DGRAPHICS_API_OPENGL_33 -D_GLFW_X11
 ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -Wshadow -g -std=c17
 ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -Wshadow -g -std=c++20
@@ -75,8 +75,8 @@ ALL_LDFLAGS += $(LDFLAGS)
 
 else ifeq ($(config),release_x64)
 TARGETDIR = bin/Release
-TARGET = $(TARGETDIR)/Personal-Raylib-Quickstart
-OBJDIR = obj/x64/Release/Personal-Raylib-Quickstart
+TARGET = $(TARGETDIR)/Personal-Raylib-Quickstart-Linux
+OBJDIR = obj/x64/Release/Personal-Raylib-Quickstart-Linux
 DEFINES += -DNDEBUG -DPLATFORM_DESKTOP -DGRAPHICS_API_OPENGL_33 -D_GLFW_X11
 ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -Wshadow -O2 -std=c17
 ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -Wshadow -O2 -std=c++20
@@ -86,8 +86,8 @@ ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64 -s
 
 else ifeq ($(config),release_x86)
 TARGETDIR = bin/Release
-TARGET = $(TARGETDIR)/Personal-Raylib-Quickstart
-OBJDIR = obj/x86/Release/Personal-Raylib-Quickstart
+TARGET = $(TARGETDIR)/Personal-Raylib-Quickstart-Linux
+OBJDIR = obj/x86/Release/Personal-Raylib-Quickstart-Linux
 DEFINES += -DNDEBUG -DPLATFORM_DESKTOP -DGRAPHICS_API_OPENGL_33 -D_GLFW_X11
 ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m32 -Wshadow -O2 -std=c17
 ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m32 -Wshadow -O2 -std=c++20
@@ -97,8 +97,8 @@ ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib32 -m32 -s
 
 else ifeq ($(config),release_arm64)
 TARGETDIR = bin/Release
-TARGET = $(TARGETDIR)/Personal-Raylib-Quickstart
-OBJDIR = obj/ARM64/Release/Personal-Raylib-Quickstart
+TARGET = $(TARGETDIR)/Personal-Raylib-Quickstart-Linux
+OBJDIR = obj/ARM64/Release/Personal-Raylib-Quickstart-Linux
 DEFINES += -DNDEBUG -DPLATFORM_DESKTOP -DGRAPHICS_API_OPENGL_33 -D_GLFW_X11
 ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -Wshadow -O2 -std=c17
 ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -Wshadow -O2 -std=c++20
@@ -129,7 +129,7 @@ all: $(TARGET)
 
 $(TARGET): $(GENERATED) $(OBJECTS) $(LDDEPS) | $(TARGETDIR)
 	$(PRELINKCMDS)
-	@echo Linking Personal-Raylib-Quickstart
+	@echo Linking Personal-Raylib-Quickstart-Linux
 	$(SILENT) $(LINKCMD)
 	$(POSTBUILDCMDS)
 
@@ -150,7 +150,7 @@ else
 endif
 
 clean:
-	@echo Cleaning Personal-Raylib-Quickstart
+	@echo Cleaning Personal-Raylib-Quickstart-Linux
 ifeq (posix,$(SHELLTYPE))
 	$(SILENT) rm -f  $(TARGET)
 	$(SILENT) rm -rf $(GENERATED)
