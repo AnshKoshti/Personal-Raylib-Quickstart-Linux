@@ -6,7 +6,7 @@
   "configurations": [
     {
       "name": "Debug",
-      "type": "cppdbg",
+      "type": "lldb-dap",
       "request": "launch",
       "args": [],
       "stopAtEntry": false,
@@ -37,7 +37,7 @@
     },
     {
       "name": "Debug NoPremake",
-      "type": "cppdbg",
+      "type": "lldb-dap",
       "request": "launch",
       "args": [],
       "stopAtEntry": false,
@@ -68,7 +68,7 @@
     },
     {
       "name": "Run Release",
-      "type": "cppdbg",
+      "type": "lldb-dap",
       "request": "launch",
       "args": [],
       "stopAtEntry": false,
